@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:background="@drawable/white_circle"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/ic_baseline_account_circle_24" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:background="@drawable/rect">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please Enter your details"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Name &amp; Email"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/llll1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:orientation="vertical">
+
+                        <!--<fragment android:id="@+id/autocomplete_fragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                            />-->
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtName"
+                                android:inputType="textPersonName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Name"
+                                android:textColorHint="@color/orange"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/opensans_semibold"/>
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/input_layout_HOuseNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_marginTop="10dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtEmail"
+                                android:inputType="textEmailAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Email"
+                                android:textColorHint="@color/orange"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/opensans_semibold"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_marginTop="30dp"
+                android:alpha="0.8">
+
+                <Button
+                    android:id="@+id/okButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:text="Ok"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@android:color/white"
+                    android:background="@color/green" />
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:text="Cancel"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@android:color/white"
+                    android:background="@android:color/holo_red_dark"
+                    android:layout_marginStart="@dimen/_5sdp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    <color name="colorPrimary">#035C91</color>-->
+    <!--    <color name="colorPrimaryDark">#035C91</color>-->
+    <!--    <color name="colorAccent">#035C91</color>-->
+
+    <color name="colorPrimary">#78baf6</color>
+    <color name="colorPrimaryDark">#418ac3</color>
+    <color name="colorAccent">#adecff</color>
+
+    <color name="splash_background">#035C91</color>
+
+    <color name="green">@color/colorPrimaryDark</color>
+    <color name="orange">#FE8100</color>
+    <color name="hintColor">#808080</color>
+    <color name="lightGrey">#dcdcdc</color>
+    <color name="darkGrey">#2F2929</color>
+
+    <color name="bg_green">#00BCD4</color>
+
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="item_name">#0c0c0c</color>
+    <color name="description">#1a1a1a</color>
+    <color name="chef">#777</color>
+    <color name="timestamp">#777</color>
+    <color name="magenta">#FF00FF</color>
+    <color name="light_pink">#F8DFDF</color>
+
+    <color name="dark_green">#387002</color>
+
+    <!--status colors-->
+    <color name="pending">#0000FF</color>
+    <color name="accepted">@color/dark_green</color>
+    <color name="cancelled">@android:color/holo_red_dark</color>
+    <color name="returned">@color/colorAccent</color>
+    <color name="completed">#CCCC00</color>
+    <color name="delivered">#008000</color>
+    <color name="grey_50">#FAFAFA</color>
+</resources>

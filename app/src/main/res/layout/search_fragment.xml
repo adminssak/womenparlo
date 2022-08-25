@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".search.SearchFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:text="Hello" />
+
+    <!--<androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        style="@style/MySearchViewStyle"
+        app:queryHint="search 2000+ products" />-->
+
+    <EditText
+        android:id="@+id/searchView"
+        app:queryHint="search 2000+ products"
+        android:layout_height="wrap_content"
+        android:hint="Search Here"
+        android:drawablePadding="@dimen/_5sdp"
+        android:focusedByDefault="true"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:layout_width="match_parent">
+
+        <requestFocus/>
+    </EditText>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lnrdl"
+    app:flow_horizontalAlign="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:onClick="change_pincode">
+    <TextView
+        android:id="@+id/deliverLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:drawablePadding="5dp"
+        android:textStyle="bold"
+        android:text="Delivery Location"
+        android:textColor="@color/quantum_white_text"
+        android:textSize="15sp"
+         />
+    <TextView
+        android:id="@+id/pincode2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="111111"
+        android:textColor="@color/quantum_white_text"
+        android:textSize="15sp"
+        android:drawableRight="@drawable/ic_baseline_location_on_24"
+         />
+<!--    android:layout_marginLeft="10dp"-->
+</LinearLayout>

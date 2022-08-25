@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="3"
+    android:background="@color/lightGrey"
+    android:orientation="vertical"
+    tools:context=".address.AddressActivity">
+
+    <include
+        layout="@layout/toolbar_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/next">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:id="@+id/llll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:paddingHorizontal="@dimen/_16sdp"
+                android:paddingBottom="@dimen/_16sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:background="@drawable/circularbordersolid"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtShippingAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shipping Address"
+                        android:textSize="17sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/rgLocationType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/txtShippingAddress">
+
+                        <RadioButton
+                            android:id="@+id/rbCurrentLocation"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Current Location"/>
+
+                        <RadioButton
+                            android:id="@+id/rbCustomLocation"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Custom Location"/>
+
+                    </RadioGroup>
+
+                    <ImageView
+                        android:id="@+id/ivgps"
+                        android:layout_width="wrap_content"
+                        android:textSize="17sp"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:textStyle="bold"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="end"
+                        android:visibility="gone"
+                        app:tint="@color/colorPrimaryDark"
+                        android:src="@drawable/ic_baseline_my_location_24"
+                        android:onClick="getCurrentLocation"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/ivgps"
+                        android:visibility="gone"
+                        android:onClick="getCurrentLocation"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Current Location"/>
+                </RelativeLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint="Add a Landmark"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+                        android:id="@+id/places_autocomplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/opensans_semibold"
+                        android:inputType="textPostalAddress"
+                        android:padding="14dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        app:pacv_googleMapsApiKey="@string/location_api_key_id" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_HOuseNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtHouse"
+                        android:inputType="textPostalAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="House No., Building Name"
+                        android:textColorHint="@color/orange"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/opensans_semibold"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="10dp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Society, Area, Colony"
+                        android:textColorHint="@color/orange"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:inputType="textPostalAddress"
+                        android:fontFamily="@font/opensans_semibold"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_CIty"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:hint="City"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtCity"
+                        android:inputType="textPostalAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/orange"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/opensans_semibold"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_State"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:hint="State"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtState"
+                        android:inputType="textPostalAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/orange"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/opensans_semibold"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_landmark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginTop="10dp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtLandmark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Landmark"
+                        android:textColorHint="@color/orange"
+                        android:textColor="@android:color/black"
+                        android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/opensans_semibold"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_pinCode"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtPincode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Pincode"
+                        android:maxLength="6"
+                        android:textColorHint="@color/orange"
+                        android:textColor="@android:color/black"
+                        android:inputType="number"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/opensans_semibold"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <!--Address Details-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circularbordersolid"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Billing Address"
+                        android:textSize="17sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtEditAddress"
+                        android:layout_width="0dp"
+                        android:textSize="17sp"
+                        android:fontFamily="@font/proximanovaregular"
+                        android:textStyle="bold"
+                        android:text="Edit"
+                        android:gravity="end"
+                        android:onClick="OpenDialogForAddressChange"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="8dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circular_grey_bordersolid"
+                        android:padding="10dp"
+                        app:tint="#293859"
+                        android:src="@drawable/ic_baseline_my_location_24"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/material_blue_grey_95"
+                        android:textSize="15sp"
+                        android:textIsSelectable="true"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="Add an address"
+                        android:autoLink="map"
+                        android:fontFamily="@font/proximanovaregular" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:onClick="next"
+        android:layout_alignParentBottom="true"
+        android:text="CONTINUE"/>
+
+</RelativeLayout>
